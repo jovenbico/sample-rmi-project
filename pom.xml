@@ -14,6 +14,8 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<jmeter.version>3.0</jmeter.version>
 	</properties>
 
 	<dependencyManagement>
@@ -28,6 +30,28 @@
 				<artifactId>rmi-server</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.apache.jmeter</groupId>
+				<artifactId>jorphan</artifactId>
+				<version>${jmeter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.jmeter</groupId>
+				<artifactId>ApacheJMeter_core</artifactId>
+				<version>${jmeter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.jmeter</groupId>
+				<artifactId>ApacheJMeter_components</artifactId>
+				<version>${jmeter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.jmeter</groupId>
+				<artifactId>ApacheJMeter_java</artifactId>
+				<version>${jmeter.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-core</artifactId>

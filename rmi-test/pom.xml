@@ -13,6 +13,23 @@
 			<groupId>com.bicjo.rmi</groupId>
 			<artifactId>rmi-core</artifactId>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>jorphan</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_components</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_java</artifactId>
+        </dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
