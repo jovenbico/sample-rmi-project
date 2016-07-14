@@ -8,6 +8,7 @@
 	<modules>
 		<module>rmi-core</module>
 		<module>rmi-server</module>
+		<module>rmi-test</module>
 	</modules>
 
 	<properties>
