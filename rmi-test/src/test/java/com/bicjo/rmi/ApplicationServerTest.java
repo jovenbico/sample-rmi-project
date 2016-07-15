@@ -24,6 +24,7 @@ public class ApplicationServerTest extends Assert {
 		try {
 			addressService = (AddressService) Naming.lookup("rmi://localhost:1066/addressService");
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			LOG.error("Can't connect to rmi-server");
 			LOG.error(e.getMessage(), e);
 		}
 
