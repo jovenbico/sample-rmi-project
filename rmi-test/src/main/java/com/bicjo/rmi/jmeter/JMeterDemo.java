@@ -40,7 +40,7 @@ public class JMeterDemo {
 
 		// Thread Group
 		ThreadGroup threadGroup = new ThreadGroup();
-		threadGroup.setNumThreads(1);
+		threadGroup.setNumThreads(5);
 		threadGroup.setRampUp(1);
 		threadGroup.setSamplerController(loopController);
 

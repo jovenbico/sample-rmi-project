@@ -5,6 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import org.apache.commons.lang.time.StopWatch;
 import org.apache.jmeter.samplers.AbstractSampler;
 import org.apache.jmeter.samplers.Entry;
 import org.apache.jmeter.samplers.SampleResult;
@@ -21,17 +22,24 @@ public class RemoteSampler extends AbstractSampler {
 
 	@Override
 	public SampleResult sample(Entry arg0) {
-		LOG.info("remote sampler");
-
 		try {
 
+			StopWatch stopWatch = new StopWatch();
+			stopWatch.start();
 			/*
 			 * TODO refactor
 			 * 
-			 * 1. create object pooling 2. create sample reporting
+			 * 1. create object pooling
+			 * 
+			 * 2. create sample reporting
+			 * 
+			 * 3. create fixture address test-data
 			 */
 			AddressService addressService = (AddressService) Naming.lookup("rmi://localhost:1066/addressService");
 			addressService.addAddress("a", "b", "c");
+
+			stopWatch.stop();
+			LOG.info("time-taken " + stopWatch.toString());
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
 			LOG.error("Can't connect to rmi-server");
