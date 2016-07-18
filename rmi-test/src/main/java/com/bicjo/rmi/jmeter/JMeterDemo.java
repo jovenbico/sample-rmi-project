@@ -4,12 +4,13 @@ import java.io.File;
 
 import org.apache.jmeter.control.LoopController;
 import org.apache.jmeter.engine.StandardJMeterEngine;
+import org.apache.jmeter.samplers.AbstractSampler;
 import org.apache.jmeter.testelement.TestPlan;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
 
-import com.bicjo.rmi.jmeter.sampler.RemoteSampler;
+import com.bicjo.rmi.jmeter.sampler.QueryAddressRemoteSampler;
 
 public class JMeterDemo {
 
@@ -29,7 +30,8 @@ public class JMeterDemo {
 		HashTree testPlanTree = new HashTree();
 
 		// My Remote Sampler
-		RemoteSampler remoteSampler = new RemoteSampler();
+		// AbstractSampler remoteSampler = new AddAddressRemoteSampler();
+		AbstractSampler remoteSampler = new QueryAddressRemoteSampler();
 
 		// Loop Sampler
 		LoopController loopController = new LoopController();

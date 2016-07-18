@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.util.List;
 
 import org.apache.commons.lang.time.StopWatch;
 import org.apache.jmeter.samplers.AbstractSampler;
@@ -13,10 +14,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.bicjo.rmi.module.AddressService;
+import com.bicjo.rmi.module.object.Address;
 
-public class RemoteSampler extends AbstractSampler {
+public class QueryAddressRemoteSampler extends AbstractSampler {
 
-	private static final long serialVersionUID = -983742104224545101L;
+	private static final long serialVersionUID = -4317638259508904980L;
 
 	private final Logger LOG = LogManager.getLogger(getClass());
 
@@ -36,10 +38,11 @@ public class RemoteSampler extends AbstractSampler {
 			 * 3. create fixture address test-data
 			 */
 			AddressService addressService = (AddressService) Naming.lookup("rmi://localhost:1066/addressService");
-			addressService.addAddress("a", "b", "c");
+			String street = RamdomAddressData.randomStreet();
+			List<Address> addresses = addressService.searchStreet(street);
 
 			stopWatch.stop();
-			LOG.info("time-taken " + stopWatch.toString());
+			LOG.info("address '" + street + "' size " + addresses.size() + ", time-taken " + stopWatch.toString());
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
 			LOG.error("Can't connect to rmi-server");
