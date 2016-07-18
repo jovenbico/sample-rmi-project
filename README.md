@@ -11,3 +11,5 @@ AbstractSampler Implementations:
 - com.bicjo.rmi.jmeter.sampler.QueryAddressRemoteSampler
 
 [4. RUN A JMETER TEST THROUGH A PROGRAM (FROM JAVA CODE)](https://www.blazemeter.com/blog/5-ways-launch-jmeter-test-without-using-jmeter-gui)
+
+[BitBucket jmeter-from-code](https://bitbucket.org/blazemeter/jmeter-from-code/src/57cef9e2b1c9?at=master)
