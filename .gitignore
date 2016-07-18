@@ -4,3 +4,5 @@ target/
 .settings
 
 jmeter.log
+*.csv
+*.jmx

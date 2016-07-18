@@ -24,6 +24,9 @@ public class QueryAddressRemoteSampler extends AbstractSampler {
 
 	@Override
 	public SampleResult sample(Entry arg0) {
+		SampleResult sampleResult = new SampleResult();
+		sampleResult.setSampleLabel("query-address");
+		sampleResult.sampleStart();
 		try {
 
 			StopWatch stopWatch = new StopWatch();
@@ -43,13 +46,15 @@ public class QueryAddressRemoteSampler extends AbstractSampler {
 
 			stopWatch.stop();
 			LOG.info("address '" + street + "' size " + addresses.size() + ", time-taken " + stopWatch.toString());
-
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
 			LOG.error("Can't connect to rmi-server");
 			LOG.error(e.getMessage(), e);
+		} finally {
+			sampleResult.setSuccessful(Boolean.TRUE);
+			sampleResult.sampleEnd();
 		}
 
-		return null;
+		return sampleResult;
 	}
 
 }

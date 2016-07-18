@@ -22,6 +22,9 @@ public class AddAddressRemoteSampler extends AbstractSampler {
 
 	@Override
 	public SampleResult sample(Entry arg0) {
+		SampleResult sampleResult = new SampleResult();
+		sampleResult.setSampleLabel("add-address");
+		sampleResult.sampleStart();
 		try {
 
 			StopWatch stopWatch = new StopWatch();
@@ -45,9 +48,12 @@ public class AddAddressRemoteSampler extends AbstractSampler {
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
 			LOG.error("Can't connect to rmi-server");
 			LOG.error(e.getMessage(), e);
+		} finally {
+			sampleResult.setSuccessful(Boolean.TRUE);
+			sampleResult.sampleEnd();
 		}
 
-		return null;
+		return sampleResult;
 	}
 
 }
