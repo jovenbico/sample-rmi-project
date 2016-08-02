@@ -55,7 +55,7 @@ public class JMeterDemo {
 
 		// Loop Sampler
 		LoopController loopController = new LoopController();
-		loopController.setLoops(10);
+		loopController.setLoops(100);
 		loopController.setFirst(Boolean.TRUE);
 		loopController.setProperty(TestElement.TEST_CLASS, LoopController.class.getName());
 		loopController.setProperty(TestElement.GUI_CLASS, LoopControlPanel.class.getName());
@@ -63,7 +63,7 @@ public class JMeterDemo {
 
 		// Thread Group
 		ThreadGroup threadGroup = new ThreadGroup();
-		threadGroup.setNumThreads(5);
+		threadGroup.setNumThreads(100);
 		threadGroup.setRampUp(1);
 		threadGroup.setSamplerController(loopController);
 		threadGroup.setProperty(TestElement.TEST_CLASS, ThreadGroup.class.getName());
