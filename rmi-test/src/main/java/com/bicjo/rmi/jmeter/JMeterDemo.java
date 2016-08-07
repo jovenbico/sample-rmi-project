@@ -28,8 +28,7 @@ import com.bicjo.rmi.jmeter.sampler.QueryAddressRemoteSampler;
 
 public class JMeterDemo {
 
-	// private static final Logger LOG =
-	// LogManager.getFormatterLogger(JMeterDemo.class);
+	// private static final Logger LOG = LogManager.getLogger(JMeterDemo.class);
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		// JMeter Engine

@@ -13,3 +13,13 @@ AbstractSampler Implementations:
 [4. RUN A JMETER TEST THROUGH A PROGRAM (FROM JAVA CODE)](https://www.blazemeter.com/blog/5-ways-launch-jmeter-test-without-using-jmeter-gui)
 
 [BitBucket jmeter-from-code](https://bitbucket.org/blazemeter/jmeter-from-code/src/57cef9e2b1c9?at=master)
+
+###### JUnit and Jmeter
+Run JUnit test cases in multiple threads   
+Apply JMeter features like:  
+* Logic Controllers
+* Timers
+* Assertions
+* Listeners   
+
+Control the test execution order and conditions to build an advanced test plan
