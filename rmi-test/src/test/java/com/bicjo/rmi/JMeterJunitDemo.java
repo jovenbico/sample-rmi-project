@@ -42,7 +42,7 @@ public class JMeterJunitDemo {
 		JUnitSampler queryRemoteSampler = new JUnitSampler();
 		queryRemoteSampler.setJunit4(Boolean.TRUE);
 		queryRemoteSampler.setClassname("com.bicjo.rmi.module.AddressServiceTest");
-		queryRemoteSampler.setMethod("addAddress_main");
+		queryRemoteSampler.setMethod("searchStreet_main");
 
 		// Loop Sampler
 		LoopController loopController = new LoopController();
